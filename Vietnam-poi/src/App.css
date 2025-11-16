@@ -1,0 +1,177 @@
+/* frontend/src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary-blue: #4285f4;
+  --google-red: #ea4335;
+  --google-yellow: #fbbc05;
+  --google-green: #34a853;
+  --background-grey: #f8f9fa;
+  --card-white: #ffffff;
+  --text-primary: #202124;
+  --text-secondary: #5f6368;
+  --border-light: #dadce0;
+  --shadow-light: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+}
+
+/* General Body and App Styles */
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--background-grey);
+  color: var(--text-primary);
+}
+
+.App {
+  text-align: center;
+}
+
+/* Header and Search Bar */
+.App-header {
+  background-color: var(--card-white);
+  padding: 20px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-light);
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--shadow-light);
+  border-radius: 8px;
+  overflow: hidden; /* Ensures the button's rounded corners are respected */
+}
+
+.search-input {
+  color: black;
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  background-color: var(--card-white);
+  outline: none;
+  /* Add a subtle focus state */
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.search-input:focus {
+  box-shadow: 0 1px 6px rgba(32,33,36,.28);
+  border-color: rgba(223,225,229,0);
+}
+
+.search-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search-button:hover {
+  background-color: #3367d6; /* A slightly darker blue for hover */
+}
+
+.search-button:disabled {
+  background-color: #9aa0a6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--google-red);
+  margin-top: 10px;
+}
+
+/* Main Content Area */
+.App-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Info Cards */
+.location-info, .pois-info {
+  text-align: left;
+  margin: 20px 0;
+  padding: 16px;
+  background-color: var(--card-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+.pois-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* POI List Items */
+.poi-item {
+  margin: 10px 0;
+  padding: 12px;
+  background-color: var(--card-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.poi-item:hover {
+  box-shadow: var(--shadow-light);
+  transform: translateY(-1px);
+}
+
+.poi-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.poi-category {
+  color: var(--text-secondary);
+  font-style: italic;
+  background-color: #f1f3f4;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-style: normal;
+}
+
+/* Map Container */
+#map {
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+/* Style for the "no POIs found" message */
+.info-message {
+  text-align: center;
+  margin: 20px 0;
+  padding: 16px;
+  background-color: #e8f0fe; /* Light blue background */
+  color: var(--primary-blue);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  font-size: 16px;
+}
+
+.category-select {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  background-color: var(--card-white);
+  outline: none;
+  border-left: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
